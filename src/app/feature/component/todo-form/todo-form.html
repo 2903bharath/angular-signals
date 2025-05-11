@@ -1,0 +1,34 @@
+<div class="todo-form-container">
+    <h2>{{ editingTask ? 'Edit Task' : 'Add New Task' }}</h2>
+  
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          id="title"
+          [formControl]="formControls.title"  type="text"
+          class="form-control"
+          [class.is-invalid]="formControls.title.invalid && formControls.title.touched" />
+        @if (formControls.title.invalid && formControls.title.touched) {  <div class="invalid-feedback">
+            Title is required.
+          </div>
+        }
+      </div>
+  
+      <div class="form-group">
+        <label for="completed">
+          <input
+            id="completed"
+            type="checkbox"
+            [formControl]="formControls.completed"  />
+          Completed
+        </label>
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+          {{ editingTask ? 'Update Task' : 'Add Task' }}
+        </button>
+      </div>
+    </form>
+  </div>

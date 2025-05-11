@@ -1,0 +1,53 @@
+.header {
+    mat-toolbar {
+      background: #3f51b5;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  
+      button.mat-icon-button {
+        color: white;
+        margin: 0 8px;
+  
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+  
+      .example-spacer {
+        flex: 1 1 auto;
+      }
+  
+      span {
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 12px;
+      }
+    }
+  }
+  
+  .nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 24px;
+  
+    button {
+      min-width: 120px;
+      font-weight: 500;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.2s ease;
+  
+      &:hover {
+        background-color: rgba(63, 81, 181, 0.1);
+      }
+    }
+  }
+  
+  .content {
+    padding: 24px;
+  }
+  

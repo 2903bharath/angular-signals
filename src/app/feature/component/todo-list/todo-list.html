@@ -1,0 +1,51 @@
+<div class="todo-container">
+  <div class="form-section">
+    <app-todo-form></app-todo-form>
+  </div>
+  <div class="list-section">
+    <div class="filter-section" style="margin-bottom: 1rem;">
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Filter by Date</mat-label>
+        <mat-select [value]="selectedDate" (selectionChange)="selectedDate.set($event.value)">
+          <mat-option [value]="null">All Dates</mat-option>
+          @for (date of availableDates(); track date) {
+          <mat-option [value]="date">{{ date }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-list>
+      @for (todo of filteredTodos(); track todo.id) {
+        <mat-list-item>
+          <div class="todo-item-content">
+            <mat-checkbox
+              [checked]="todo.completed"
+              (change)="onCheckboxChange($event, todo)"
+              class="todo-checkbox"
+            >
+              @if (editingTodoId !== todo.id) {
+                {{ todo.title }}
+              } @else {
+                <input [(ngModel)]="editTitle" (blur)="saveEdit(todo)" (keyup.enter)="saveEdit(todo)" />
+              }
+            </mat-checkbox>
+      
+            @if (editingTodoId !== todo.id) {
+              <button mat-icon-button (click)="onEdit(todo)" class="edit-button">
+                <mat-icon>edit</mat-icon>
+              </button>
+            }
+      
+            <button
+              mat-icon-button
+              (click)="onDelete(todo.id)"
+              class="delete-button"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </mat-list-item>
+      }      
+    </mat-list>
+  </div>
+</div>

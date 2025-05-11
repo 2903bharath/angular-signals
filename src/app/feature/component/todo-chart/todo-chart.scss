@@ -1,0 +1,13 @@
+.chart-container {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.chart-item {
+  flex: 0 0 48%;
+  min-width: 400px;
+  min-height: 400px;
+}

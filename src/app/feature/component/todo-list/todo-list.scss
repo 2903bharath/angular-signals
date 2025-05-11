@@ -1,0 +1,60 @@
+.todo-container {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+
+  .form-section {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .list-section {
+    flex: 2;
+  }
+}
+
+.form-section,
+.list-section {
+  background: #fafabd;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.list-section {
+  padding: 16px;
+}
+
+.todo-item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 8px;
+
+  mat-checkbox {
+    flex: 1;
+  }
+
+  .delete-button {
+    margin-left: 12px;
+  }
+}
+
+
+.todo-checkbox {
+  margin-right: 16px;
+}
+
+.delete-button {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+::ng-deep .cdk-overlay-pane {
+  background-color: white !important;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1000;
+}
+

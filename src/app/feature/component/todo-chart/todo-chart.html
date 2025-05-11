@@ -1,0 +1,32 @@
+<div class="chart-container">
+  <div class="chart-item">
+    <ngx-charts-pie-chart
+      [view]="[400, 300]"
+      [results]="chartData()"
+      [labels]="true"
+      [legend]="true"
+      [legendPosition]="legendPosition" 
+      [scheme]="colorScheme"
+      [doughnut]="false"
+      [gradient]="false"
+      [tooltipDisabled]="true"/>
+    </div>
+    <div class="chart-item">
+    <ngx-charts-line-chart
+      [view]="[500, 300]"
+      [scheme]="colorScheme"
+      [results]="lineChartData()"
+      [legend]="true"
+      [legendPosition]="legendPosition"
+      [xAxis]="true"
+      [yAxis]="true"
+      [autoScale]="true"
+      [timeline]="true"
+      [showXAxisLabel]="true"
+      [xAxisLabel]="'Date'"
+      [showYAxisLabel]="true"
+      [yAxisLabel]="'Tasks'"
+      [tooltipDisabled]="true"/>
+    </div>
+  </div>
+  
